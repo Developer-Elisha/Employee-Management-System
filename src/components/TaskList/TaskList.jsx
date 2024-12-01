@@ -1,58 +1,26 @@
 import React from 'react'
+import AccecptTask from './AccecptedTask'
+import NewTask from './NewTask'
+import CompletedTask from './CompletedTask'
+import FailedTask from './FailedTask'
 
 const TaskList = ({data}) => {
   return (
     <div id='tasklist' className='h-[55%] overflow-x-auto flex items-center justify-start gap-5 flex-nowrap w-full py-5 mt-10'>
-        <div className="h-full flex-shrink-0 w-[300px] p-5 bg-red-400 rounded-xl">
-            <div className='flex items-center justify-between'>
-                <h3 className='px-3 py-1 text-sm bg-red-600 rounded'>High</h3>
-                <h4 className='text-sm'>02 - july - 2004</h4>
-            </div>
-            <h2 className='mt-5 text-xl font-semibold'>Employees Management System</h2>
-            <p className='mt-2 text-sm'>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus iure labore quo minus, blanditiis omnis.
-            </p>
-        </div>
-        <div className="h-full flex-shrink-0 w-[300px] p-5 bg-yellow-400 rounded-xl">
-            <div className='flex items-center justify-between'>
-                <h3 className='px-3 py-1 text-sm bg-red-600 rounded'>High</h3>
-                <h4 className='text-sm'>02 - july - 2004</h4>
-            </div>
-            <h2 className='mt-5 text-xl font-semibold'>Employees Management System</h2>
-            <p className='mt-2 text-sm'>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus iure labore quo minus, blanditiis omnis.
-            </p>
-        </div>
-        <div className="h-full flex-shrink-0 w-[300px] p-5 bg-green-400 rounded-xl">
-            <div className='flex items-center justify-between'>
-                <h3 className='px-3 py-1 text-sm bg-red-600 rounded'>High</h3>
-                <h4 className='text-sm'>02 - july - 2004</h4>
-            </div>
-            <h2 className='mt-5 text-xl font-semibold'>Employees Management System</h2>
-            <p className='mt-2 text-sm'>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus iure labore quo minus, blanditiis omnis.
-            </p>
-        </div>
-        <div className="h-full flex-shrink-0 w-[300px] p-5 bg-blue-400 rounded-xl">
-            <div className='flex items-center justify-between'>
-                <h3 className='px-3 py-1 text-sm bg-red-600 rounded'>High</h3>
-                <h4 className='text-sm'>02 - july - 2004</h4>
-            </div>
-            <h2 className='mt-5 text-xl font-semibold'>Employees Management System</h2>
-            <p className='mt-2 text-sm'>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus iure labore quo minus, blanditiis omnis.
-            </p>
-        </div>
-        <div className="h-full flex-shrink-0 w-[300px] p-5 bg-red-400 rounded-xl">
-            <div className='flex items-center justify-between'>
-                <h3 className='px-3 py-1 text-sm bg-red-600 rounded'>High</h3>
-                <h4 className='text-sm'>02 - july - 2004</h4>
-            </div>
-            <h2 className='mt-5 text-xl font-semibold'>Employees Management System</h2>
-            <p className='mt-2 text-sm'>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus iure labore quo minus, blanditiis omnis.
-            </p>
-        </div>
+        {data.tasks.map((elem, idx) => {
+            if(elem.active){
+                return <AccecptTask key={idx} />
+            }
+            if(elem.NewTask){
+                return <NewTask key={idx} />
+            }
+            if(elem.completed){
+                return <CompletedTask key={idx} />
+            }
+            if(elem.failed){
+                return <FailedTask key={idx} />
+            }
+        })}
     </div>
   )
 }
