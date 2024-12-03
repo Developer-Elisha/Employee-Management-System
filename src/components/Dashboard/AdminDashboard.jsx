@@ -3,10 +3,10 @@ import Header from '../partials/Header'
 import CreateTask from '../partials/CreateTask'
 import AllTask from '../partials/AllTask'
 
-const AdminDashboard = () => {
+const AdminDashboard = (props) => {
     return (
         <div className='w-full h-screen p-7'>
-            <Header />
+            <Header changeUser={props.changeUser} />
             <CreateTask />
             <AllTask />
         </div>
