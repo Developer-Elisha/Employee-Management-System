@@ -46,7 +46,7 @@ const employees = [
     },
     {
         "id": 2,
-        "firstName": "Sara",
+        "firstName": "Shaloom",
         "email": "employee2@example.com",
         "password": "123",
         "taskCounts": {
@@ -158,7 +158,7 @@ const employees = [
     },
     {
         "id": 5,
-        "firstName": "Joshwa",
+        "firstName": "Joshua",
         "email": "employee5@example.com",
         "password": "123",
         "taskCounts": {
